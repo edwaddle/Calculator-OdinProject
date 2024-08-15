@@ -17,20 +17,27 @@ operator.forEach((element) =>{
         display.textContent="";
         console.log(element.classList);
         if (element.classList.contains("add")){
-            console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(firstNum) + parseFloat(display.textContent);
+            equal.onclick = () => {
+                display.textContent = Math.round((parseFloat(firstNum) + parseFloat(display.textContent)) *100000000.0) / 100000000;
+            }
         }
         else if (element.classList.contains("subtract")){
-            console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(firstNum) - parseFloat(display.textContent);
+            equal.onclick = () => {
+                display.textContent = Math.round((parseFloat(firstNum) - parseFloat(display.textContent)) *100000000.0) / 100000000;
+            }
         }
         else if (element.classList.contains("multiply")){
-            console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(firstNum) * parseFloat(display.textContent);
+            equal.onclick = () => {
+                display.textContent = Math.round((parseFloat(firstNum) * parseFloat(display.textContent)) *100000000.0) / 100000000;
+            }
         }
         else if (element.classList.contains("divide")){
-            console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(firstNum) / parseFloat(display.textContent);
+            equal.onclick = () => {
+                if (display.textContent === '0'){ display.textContent = "ERROR";}
+                else{
+                    console.log(parseFloat(firstNum) / parseFloat(display.textContent)*10000);
+                    display.textContent = Math.round((parseFloat(firstNum) / parseFloat(display.textContent)) *100000000.0) / 100000000;}
+            }
         }
     }
 })
