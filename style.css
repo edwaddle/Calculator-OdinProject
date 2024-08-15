@@ -10,8 +10,8 @@ body{
 }
 .calculatorContainer{
     background-color: rgb(183, 183, 183);
-    height:700px;
-    width:500px;
+    height:800px;
+    width:480px;
     display:flex;
     flex-direction: column;
     align-items:center;
@@ -26,7 +26,7 @@ body{
 
 .numpad{
     background-color:grey;
-    height:450px;
+    height:560px;
     width:450px;
     display: flex;
     flex-direction: column;
@@ -40,17 +40,18 @@ body{
     justify-content: space-evenly;
 }
 .number{
-    width:100px;
+    width: 100px;
     height:100px;
 }
 
-.zero{
+.big{
     width:210px;
     height:100px;
 }
 
 .operator{
-    width:100px;
+    width: 100px;
     height:100px;
     background-color: orange;
 }
+

@@ -1,20 +1,16 @@
-const add = document.querySelector(".add");
-const subtract = document.querySelector(".subtract");
-const multiply = document.querySelector(".multiply");
-const divide = document.querySelector(".divide");
 const equal = document.querySelector(".equal");
-
 const number = document.querySelectorAll(".number");
-
+const operator = document.querySelectorAll(".operator");
 const display = document.querySelector(".display");
+const clear = document.querySelector(".clear");
+
 number.forEach((element) => {
     element.onclick = () =>{
-        display.textContent += element.value;
+        if (element.value === 'neg'){display.textContent *= -1;}
+        else{display.textContent += element.value;}
     }
 })
 
-
-const operator = document.querySelectorAll(".operator");
 operator.forEach((element) =>{
     element.onclick = () => {
         let firstNum = display.textContent;
@@ -22,21 +18,25 @@ operator.forEach((element) =>{
         console.log(element.classList);
         if (element.classList.contains("add")){
             console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(display.textContent) + parseFloat(firstNum);
+            equal.onclick = () => display.textContent = parseFloat(firstNum) + parseFloat(display.textContent);
         }
         else if (element.classList.contains("subtract")){
             console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(display.textContent) - parseFloat(firstNum);
+            equal.onclick = () => display.textContent = parseFloat(firstNum) - parseFloat(display.textContent);
         }
         else if (element.classList.contains("multiply")){
             console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(display.textContent) * parseFloat(firstNum);
+            equal.onclick = () => display.textContent = parseFloat(firstNum) * parseFloat(display.textContent);
         }
         else if (element.classList.contains("divide")){
             console.log("working");
-            equal.onclick = () => display.textContent = parseFloat(display.textContent) / parseFloat(firstNum);
+            equal.onclick = () => display.textContent = parseFloat(firstNum) / parseFloat(display.textContent);
         }
     }
 })
+
+clear.onclick = () => display.textContent="";
+
+
 
 
