@@ -13,11 +13,30 @@ number.forEach((element) => {
     }
 })
 
+
 const operator = document.querySelectorAll(".operator");
-add.onclick = () =>{
-    let firstNum = display.textContent;
-    display.textContent="";
-    equal.onclick = () => {display.textContent = parseFloat(display.textContent) + parseFloat(firstNum);}
-}
+operator.forEach((element) =>{
+    element.onclick = () => {
+        let firstNum = display.textContent;
+        display.textContent="";
+        console.log(element.classList);
+        if (element.classList.contains("add")){
+            console.log("working");
+            equal.onclick = () => display.textContent = parseFloat(display.textContent) + parseFloat(firstNum);
+        }
+        else if (element.classList.contains("subtract")){
+            console.log("working");
+            equal.onclick = () => display.textContent = parseFloat(display.textContent) - parseFloat(firstNum);
+        }
+        else if (element.classList.contains("multiply")){
+            console.log("working");
+            equal.onclick = () => display.textContent = parseFloat(display.textContent) * parseFloat(firstNum);
+        }
+        else if (element.classList.contains("divide")){
+            console.log("working");
+            equal.onclick = () => display.textContent = parseFloat(display.textContent) / parseFloat(firstNum);
+        }
+    }
+})
 
 
